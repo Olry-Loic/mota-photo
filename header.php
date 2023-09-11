@@ -8,12 +8,16 @@
     <?php wp_head(); ?>
 </head>
 <body>
-    <div class="logo">
+<div class="logo">
         <img src="<?php echo get_theme_file_uri() . '/assets/images/logo.png'; ?> "alt="">
     </div>
     <header>
         <nav id="nav">  
-                <?php wp_nav_menu(['theme_location' => 'main-menu',]); ?> 
+                <?php wp_nav_menu(['theme_location' => 'main-menu',]); ?>
+                <ul id="contact" class="contact">
+                    <li><a href="#" id="contactBtn">CONTACT</a></li> 
+                </ul>
                 <div id="icons"></div>        
         </nav>
+
     </header>

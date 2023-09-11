@@ -14,8 +14,14 @@ function register_my_menu() {
 }
 add_action( 'after_setup_theme', 'register_my_menu' );
 
+// Charger le fichier JavaScript menuBurger.js
 function menuBurger_script() {
-    // Charger le fichier JavaScript menuBurger.js
     wp_enqueue_script('menuBurger_script', get_template_directory_uri() . '/js/burger.js', array(),'1.0',array("in_footer"=>true));
     }
     add_action('wp_enqueue_scripts', 'menuBurger_script');
+
+// Charger le fichier JavaScript contact.js
+function modalContact_script() {
+        wp_enqueue_script('contact_script', get_template_directory_uri() . '/js/contact.js', array(),'1.0',array("in_footer"=>true));
+    }
+    add_action('wp_enqueue_scripts', 'modalContact_script');
