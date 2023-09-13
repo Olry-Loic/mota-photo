@@ -13,11 +13,14 @@
     </div>
     <header>
         <nav id="nav">  
+        <div id="icons"></div>
+            <div class="menu-one">
                 <?php wp_nav_menu(['theme_location' => 'main-menu',]); ?>
                 <ul id="contact" class="contact">
                     <li><a href="#" id="contactBtn">CONTACT</a></li> 
                 </ul>
-                <div id="icons"></div>        
+                 
+            </div>       
         </nav>
 
     </header>

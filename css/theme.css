@@ -51,12 +51,12 @@ margin-left: calc(0.94rem + 6.6743vw);
   width: calc(7.47rem + 5.06vw);
 }
 
-.menu-principale-container {
-width: 100%;
-height: calc(4.32rem + 0.6vw);
-display: flex;
-justify-content: flex-end;
-align-items: center;
+.menu-one {
+  width: 100%;
+  height: calc(4.32rem + 0.6vw);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 nav {
@@ -115,22 +115,39 @@ display: none;
     width: 27.42px;
     height: 18.85px;
   }
+  .menu-one {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    top: 72px;
+    justify-content: center;
+    width: 100%;
+    height: 812px;
+    background-color: var(--rouge);
+    left: -100%;
+    transition: 0.4s;
+}
 
   ul#menu-principale {
     display: flex;
+    gap: 18px;
     flex-direction: column;
     align-items: center;
-    position: absolute;
-    width: 100%;
-    top: 72px;
-    height: 812px;
-    justify-content: center;
-    left: -100%;
-    background-color: var(--rouge);
-    margin: 0px;
-    padding: 0px;
-    transition: 0.4s;
+    padding-left: 0px;
   }
+  .contact{
+    padding-left: 0px;
+    margin-right: 0px;
+  }
+  a#contactBtn {
+    display: flex;
+    margin-top: 18px;
+    width: 189px;
+    height: 65px;
+    justify-content: center;
+}
 
   nav {
     justify-content: flex-end;
@@ -143,7 +160,7 @@ display: none;
     line-height: 65px;
   }
 
-  nav.active ul#menu-principale {
+  nav.active .menu-one {
     left: 0px;
     transition: 0.4s;
   }
@@ -171,6 +188,7 @@ ul#menu-pied-de-page {
   line-height: 24px;
   text-decoration: none;
   color: black;
+  border-top: 1px solid #000000
 }
 
 .menu-pied-de-page-container {
@@ -286,6 +304,32 @@ input.wpcf7-form-control.wpcf7-text {
   border-radius: 8px;
   border: 1px solid var(--noire);
   padding: 0px;
+}
+
+@media (max-width: 750px) {
+  div#wpcf7-f37-o1 {
+
+    width: auto;
+}
+}
+
+/*affichage post photo*/
+
+article.post {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+img.attachment-post-thumbnail.size-post-thumbnail.wp-post-image {
+  width: 60vw;
+  height: auto;
+}
+.post h2 {
+  margin: 15px;
+}
+.post p {
+  margin: 15px;
 }
 
 
