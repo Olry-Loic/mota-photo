@@ -36,5 +36,48 @@
 			</div>	
 		</div>
 	</div>
+	<div class="post-apparente">
+		<h2>VOUS AIMEREZ AUSSI</h2>
+		<div class="post-apparente-image">
+			<?php	
+				$category_text = '';
+
+				$category_terms = get_the_terms(get_the_ID(), 'categorie'); 
+				
+				if ($category_terms && !is_wp_error($category_terms)) {
+					$first_category = reset($category_terms);
+					$category_text = $first_category->name;
+				}
+
+				wp_reset_query();
+				wp_reset_postdata(); 
+				$args = array (
+				  	'post_type' => 'photo', 
+				  	'posts_per_page' => 2, 
+					"post__not_in" => array(get_the_ID()), 
+					"orderby" => "rand",
+				  	'tax_query' => array(
+						array(
+							'taxonomy' => 'categorie', 
+							'field'    => 'slug',
+							'terms'    => $category_text, 
+						),
+					),
+				);  
+				$query = new WP_Query($args);
+				
+				while ($query->have_posts()) :
+					include ('parts/relatedPhoto.php');
+				endwhile;
+				wp_reset_postdata(); 
+			?>
+		</div>
+		<div class="post-apparente-btn">
+		<ul id="post-apparente" class="post-apparente">
+            <li><a href="#" class="bouton">Toutes les photos</a></li>
+        </ul>
+		</div>
+	</div>
+</article>
 <?php endwhile; endif; ?>
 <?php get_footer(); ?>
