@@ -22,5 +22,14 @@ while ( have_posts() ) :
 		comments_template();
 	}
 endwhile; // End of the loop.
+?>
+<main>
+	<div class="main-hero">
+	<?php get_template_part('parts/hero'); ?>
+		<h2>PHOTOGRAPHE EVENT</H2>
+	</div>
+	<div class="main-filter">
+	</div>	
+</main>
 
-get_footer();
+<?php get_footer(); ?>
