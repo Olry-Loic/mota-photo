@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>MotaPhoto</title>
+        
     <?php wp_head(); ?>
 </head>
 <body>
@@ -17,10 +18,8 @@
             <div class="menu-one">
                 <?php wp_nav_menu(['theme_location' => 'main-menu',]); ?>
                 <ul id="contact" class="contact">
-                    <li><a href="#" id="contactBtn">CONTACT</a></li> 
+                    <li><a href="#" class="contactBtn">CONTACT</a></li> 
                 </ul>
-                 
             </div>       
         </nav>
-
     </header>
