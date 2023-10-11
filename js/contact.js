@@ -1,7 +1,6 @@
 // Récupérez le bouton de contact et la modale
 const contactBtn = document.querySelectorAll(".contactBtn");
 const contactModale = document.getElementById("contactModal");
-console.log(contactModale)
 
 
 // Ajoutez un gestionnaire d'événements pour afficher la modale

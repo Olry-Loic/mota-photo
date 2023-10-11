@@ -20,7 +20,7 @@
 		<div class="post-commande-texte">
 			<p>Cette photo vous intéresse ?</p>
 			<ul id="commande-contact" class="commande-contact">
-                <li><a href="#" class="bouton contactBtn" data-reference="<?php echo get_post_meta(get_the_ID(), 'reference', true); ?>">CONTACT</a></li>
+                <li><a href="#" class="button contactBtn" data-reference="<?php echo get_post_meta(get_the_ID(), 'reference', true); ?>">CONTACT</a></li>
             </ul>
 		</div>
 		<div class="post-commande-navigation">	
@@ -74,7 +74,7 @@
 		</div>
 		<div class="post-apparente-btn">
 		<ul id="post-apparente" class="post-apparente">
-            <li><a href="#" class="bouton">Toutes les photos</a></li>
+            <li><a href="#" class="button">Toutes les photos</a></li>
         </ul>
 		</div>
 	</div>

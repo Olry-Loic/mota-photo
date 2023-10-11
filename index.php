@@ -29,7 +29,30 @@ endwhile; // End of the loop.
 		<h2>PHOTOGRAPHE EVENT</H2>
 	</div>
 	<div class="main-filter">
-	</div>	
+	</div>
+	<div class="pagination">
+	<?php
+	$args= array (
+		'post_type' => 'photo', 
+		'posts_per_page' => 8, 
+		'orderby' => 'date',
+		'order' => 'DESC',
+		'paged' => 1,
+	);  
+    
+	$query = new WP_Query($args);
+	 
+    	while ($query->have_posts()) :
+			include ('parts/relatedPhoto.php');
+		endwhile;
+	
+    	wp_reset_postdata(); ?>
+	
+	</div>
+	<div class="pagination-button">
+      <a href="#!" class="button" id="pagination">Charger plus</a>
+    </div>
+
 </main>
 
 <?php get_footer(); ?>

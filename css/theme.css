@@ -24,7 +24,7 @@
   margin: 0;
 }
 
-.bouton {
+.button {
   width: 12.7vw;
   height: 1.89vw;
   padding: 8px 15px 8px 15px ;
@@ -36,6 +36,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+@media (max-width:750px) {
+  .button {
+  width: 242px;
+  height: 34px;
+  }
 }
 /******************************************************************header*************************************************************************************/
 body {
@@ -142,6 +148,7 @@ display: none;
     height: 812px;
     background-color: var(--rouge);
     left: -100%;
+    gap: 18px;
     transition: 0.4s;
   }
 
@@ -458,8 +465,9 @@ article.post {
   }
   .post-commande-texte p {
     width: 100%;
-    margin-left: 70px;
     margin-top: 5px;
+    display: flex;
+    justify-content: center;
   }
   .bouton {
     width: 233px;
@@ -630,7 +638,6 @@ article.post {
 .main-hero h2 {
   position: absolute;
   display: flex;
-  z-index: 1;
   max-width: 1440px;
   width: 100%;
   top: 21.203vw;
@@ -638,7 +645,7 @@ article.post {
   align-content: center;
   flex-wrap: wrap;
   font-family: var(--spaceMono);
-  font-size: 5.05795vw;
+  font-size: 96px;
   font-style: italic;
   font-weight: 700;
   line-height: 142px;
@@ -659,4 +666,55 @@ article.post {
 /* filter*/
 .main-filter {
   height: 100px;
+}
+/*******************************************************************Pagination photo accueil*********************************************************************************/
+
+.pagination {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.pagination .photo {
+  display: flex;
+  position: relative;
+  max-width: 564px;
+  max-height: 495px;
+
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.photo img {
+  position: relative;
+  gap: 20px;
+  max-width: 564px;
+  max-height: 495px;
+  width: 30vw;
+  height: 26vw;
+  object-fit: cover;
+  z-index: 3;
+}
+
+.pagination-button {
+  margin-top: 21.2px;
+  margin-bottom: 21.2px;
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 750px) {
+  .pagination {
+  flex-direction: column;
+  align-content: center;
+  }
+  .pagination .photo {
+    display: flex;
+    position: relative;
+  }
+  .photo img {
+  min-width: 317.66px;
+  min-height: 278.8px;
+  }
+
 }
