@@ -1,6 +1,6 @@
-/**************************************************************paramètres de la maquette***********************************************************************/
+/*______________________________________________________________*paramètres de la maquette*__________________________________*/
 :root {
-  /* couleur de la maquette */
+  /*______________________________________________________________*couleur de la maquette*__________________________________*/
   --rouge: #E00000;
   --rouge-secondaire: #FE5858;
   --rouge-tertiaire: #FFD6D6;
@@ -10,16 +10,16 @@
   --gris-medium: #D8D8D8;
   --Gris-light: #E5E5E5;
   --white: #ffffff;
-  /*************************************************************police de la maquette**************************************************************************/
+  /*_____________________________________________________________*police de la maquette*_____________________________________*/
   --spaceMono: 'SpaceMono-Regular', sans-serif;
 }
-/*************************************************************chargement des polices***************************************************************************/
+/*_______________________________________________________________*chargement des polices*____________________________________*/
 @font-face {
   font-family: 'SpaceMono-Regular'; 
   src: 
   url('polices/SpaceMono-Regular.ttf') format('truetype'),
 }
-/****************************************************************code générale*********************************************************************************/
+/*__________________________________________________________________*code générale*___________________________________________*/
 *{
   margin: 0;
 }
@@ -37,13 +37,22 @@
   align-items: center;
   justify-content: center;
 }
+
+.postform {
+  width: 260px;
+  height: 43px;
+  border: 1.3px solid var(--gris-medium);
+  border-radius: 8px 8px 0px 0px;
+  padding: 11px 18px 11px 18px;
+}
+
 @media (max-width:750px) {
   .button {
   width: 242px;
   height: 34px;
   }
 }
-/******************************************************************header*************************************************************************************/
+/*____________________________________________________________________*header*________________________________________________*/
 body {
 width: 100%; 
 max-width: 1440px;
@@ -193,7 +202,7 @@ display: none;
     margin-top: 22px;
   }
 }
-/*******************************************************************pied de page******************************************************************************************************************/
+/*__________________________________________________________________*pied de page*_____________________________________________*/
 ul#menu-pied-de-page {
   display: flex;
   flex-direction: row;
@@ -236,7 +245,7 @@ a {
     padding: 0PX;
   }
 }
-/******************************************************************Modale Contact**********************************************************************************************************************/
+/*_________________________________________________________________*Modale Contact*____________________________________________*/
 #contactModal {
   display: none;
   justify-content: center;
@@ -329,7 +338,7 @@ input.wpcf7-form-control.wpcf7-text {
   width: auto;
   }
 }
-/*****************************************************************affichage post photo***********************************************************************************************************************/
+/*______________________________________________________________*affichage post photo*______________________________________*/
 article.post {
   display: flex;
   flex-direction: column;
@@ -390,7 +399,7 @@ article.post {
   font-size: 14px;
   line-height: 20.73px;
 }
-/**************************************************************affichage post commande*******************************************************************************************************************************/
+/*__________________________________________________________*affichage post commande*_________________________________________*/
 .post-commande {
   display: flex;
   height: 118px;
@@ -482,7 +491,7 @@ article.post {
     padding: 0px;
   }
 }
-/******************************************************************Post navigation************************************************************************************************************/
+/*____________________________________________________________*Post navigation*________________________________________________*/
 .post-commande-navigation {
   position: relative;
   width: 81px;
@@ -554,7 +563,7 @@ article.post {
     display: none;
   }
 }
-/****************************************************************Post apparentée******************************************************************************************************/
+/*___________________________________________________________*Post apparentée*________________________________________________*/
 .post-apparente h2 {
   margin: 79px 0px 77px 0px;
   display: flex;
@@ -615,7 +624,7 @@ article.post {
   display: none;
   }
 }
-/*********************************************************************hero***************************************************************************************************************************************/ 
+/*_____________________________________________________________hero______________________________________________________*/ 
 .main-hero-image img {
   width: 100%;
   height: 100%;
@@ -667,36 +676,36 @@ article.post {
 .main-filter {
   height: 100px;
 }
-/*******************************************************************Pagination photo accueil*********************************************************************************/
+/*___________________________________________________*Pagination photo accueil*___________________________________________*/
 
-.pagination {
+.main-pagination {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  max-width: 1148px;
+  margin: auto;
   gap: 20px;
 }
 
-.pagination .photo {
+.main-pagination .photo {
   display: flex;
   position: relative;
   max-width: 564px;
   max-height: 495px;
-
   flex-direction: column;
   justify-content: flex-start;
 }
 .photo img {
   position: relative;
-  gap: 20px;
   max-width: 564px;
   max-height: 495px;
-  width: 30vw;
-  height: 26vw;
+  width: 40vw;
+  height: 40vw;
   object-fit: cover;
   z-index: 3;
 }
 
-.pagination-button {
+.main-pagination-button {
   margin-top: 21.2px;
   margin-bottom: 21.2px;
   display: flex;
@@ -717,4 +726,41 @@ article.post {
   min-height: 278.8px;
   }
 
+}
+/*____________________________________________________*filter*___________________________________________________________*/
+.main-filter {
+  display: flex;
+  justify-content: space-between;
+  height: 83px;
+  padding-top: 79px;
+  margin: auto;
+  max-width: 1148px;
+  width: 100%;
+}
+.main-filter-catfor {
+  gap: 36px;
+  display: flex;
+}
+/*.postform option[value="0"] {
+  visibility: hidden;
+}*/
+
+
+@media (max-width:750px) {
+  .main-filter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  height: auto;
+  }
+  .main-filter-catfor {
+    display: flex;
+    gap: 15px;
+    flex-direction: column
+}
+  .main-filter-trier {
+    margin-top: 15px;
+  }
 }

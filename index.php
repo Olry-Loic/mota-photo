@@ -29,8 +29,37 @@ endwhile; // End of the loop.
 		<h2>PHOTOGRAPHE EVENT</H2>
 	</div>
 	<div class="main-filter">
+		<div class="main-filter-catfor" >
+			<?php
+				$args = array(
+					'show_option_all' => 'CATÉGORIES',
+					'taxonomy' => 'categorie', 
+					'name' => 'categorie',
+					'orderby' => 'name',
+					'selected' => isset($_GET['categorie']) ? $_GET['catégorie'] : '', 
+				);
+			wp_dropdown_categories($args);
+			?>
+			<?php
+				$args = array(
+					'show_option_all' => 'FORMAT',
+					'taxonomy' => 'format', 
+					'name' => 'format',
+					'orderby' => 'name',
+					'selected' => isset($_GET['format']) ? $_GET['format'] : '', 
+				);
+			wp_dropdown_categories($args);
+			?>
+		</div>
+		<div class="main-filter-trier">
+			<select name="trier" id="trier" class="postform">
+				<option value="0">TRIER PAR</option>
+				<option value="nouveautes">NOUVEAUTÉS</option>
+				<option value="anciennetes">ANCIENNETÉS</option>
+			</select>
+		</div>	
 	</div>
-	<div class="pagination">
+	<div class="main-pagination">
 	<?php
 	$args= array (
 		'post_type' => 'photo', 
@@ -49,10 +78,9 @@ endwhile; // End of the loop.
     	wp_reset_postdata(); ?>
 	
 	</div>
-	<div class="pagination-button">
+	<div class="main-pagination-button">
       <a href="#!" class="button" id="pagination">Charger plus</a>
     </div>
-
 </main>
 
 <?php get_footer(); ?>
