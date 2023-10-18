@@ -56,7 +56,7 @@ function filter_script() {
     // Le script est inclus dans le pied de page (in_footer) de la page.
     wp_enqueue_script('filter_script', get_template_directory_uri() . '/js/filter.js', array(),'1.0',array("in_footer"=>true));
 }
-// Ajoute l'action pour enregistrer la fonction 'modalContact_script' lors de l'événement 'wp_enqueue_scripts'.
+// Ajoute l'action pour enregistrer la fonction 'filter_script' lors de l'événement 'wp_enqueue_scripts'.
 add_action('wp_enqueue_scripts', 'filter_script');
 
 //_____________________________________création de la fonction du filtre______________________________________________
@@ -125,3 +125,24 @@ add_action('wp_ajax_filter', 'filter');
 
 // Ajoute l'action pour déclencher la fonction 'filtrer' lors d'une requête AJAX non authentifiée.
 add_action('wp_ajax_nopriv_filter', 'filter');
+
+//_____________________________________________charger le fichier javascript lightbox__________________________________
+function lightbox_script() {
+    // Enregistre un script JavaScript appelé 'lightbox_script'.
+    // Il est chargé à partir de l'emplacement du répertoire du thème '/js/lightbox.js'.
+    // Aucune dépendance n'est spécifiée (array()).
+    // La version du script est définie sur '1.0'.
+    // Le script est inclus dans le pied de page (in_footer) de la page.
+    wp_enqueue_script('lightbox_script', get_template_directory_uri() . '/js/lightbox.js', array(),'1.0',array("in_footer"=>true));
+}
+// Ajoute l'action pour enregistrer la fonction 'lightbox_script' lors de l'événement 'wp_enqueue_scripts'.
+add_action('wp_enqueue_scripts', 'lightbox_script');
+
+//_____________________________________________charger le fichier select2 __________________________________________________
+function select_script() {
+    
+    wp_enqueue_script('select_script', get_template_directory_uri() . '/js/select2.js', array(),'1.0',array("in_footer"=>true));
+}
+
+add_action('wp_enqueue_scripts', 'select_script');
+

@@ -4,6 +4,9 @@
    	<div class="post-info-image">
 		<div class="post-image">
 			<?php the_post_thumbnail(); ?>
+			<div class="post-lightbox">
+				<div class="post-lightbox-single"></div>
+			</div>
 		</div>
    		<div class="post-info">			 
             <div class="post-texte">
@@ -74,10 +77,24 @@
 		</div>
 		<div class="post-apparente-btn">
 		<ul id="post-apparente" class="post-apparente">
-            <li><a href="#" class="button">Toutes les photos</a></li>
+            <li><a href="http://localhost/mota-photo/" class="button">Toutes les photos</a></li>
         </ul>
 		</div>
 	</div>
+	<div class="lightbox">
+		<div class="lightbox__box">
+			<button class="lightbox__close">Fermer</button>
+			<button class="lightbox__next">Suivant</button>
+			<button class="lightbox__prev">Précédent</button>
+			<div class="lightbox__container">
+				<img src="<?php echo esc_url($image_url); ?>" alt="">
+			<div class="lightbox__info">
+				<p class="lightbox__ref">azert</p>
+				<p class="lightbox__cat">azerrt</p>
+			</div>
+			</div>
+		</div>
 </article>
+	
 <?php endwhile; endif; ?>
 <?php get_footer(); ?>

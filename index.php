@@ -26,7 +26,7 @@ endwhile; // End of the loop.
 <main>
 	<div class="main-hero">
 	<?php get_template_part('parts/hero'); ?>
-		<h2>PHOTOGRAPHE EVENT</H2>
+		<h1>PHOTOGRAPHE EVENT</h1>
 	</div>
 	<div class="main-filter">
 		<div class="main-filter-catfor" >
@@ -81,6 +81,20 @@ endwhile; // End of the loop.
 	<div class="main-pagination-button">
       <a href="#!" class="button" id="pagination">Charger plus</a>
     </div>
+	<div class="lightbox">
+		<div class="lightbox__box">
+			<button class="lightbox__close">Fermer</button>
+			<button class="lightbox__next">Suivant</button>
+			<button class="lightbox__prev">Précédent</button>
+			<div class="lightbox__container">
+				<img src="<?php echo esc_url($image_url); ?>" alt="">
+			<div class="lightbox__info">
+				<p class="lightbox__ref">azert</p>
+				<p class="lightbox__cat">azerrt</p>
+			</div>
+			</div>
+		</div>
+	</div>
 </main>
 
 <?php get_footer(); ?>

@@ -40,6 +40,7 @@ $(document).ready(function($) {
             success: function(response) {
                 // Ajoute la réponse à l'élément HTML avec la classe "main-pagination".
                 $(".main-pagination").append(response);
+                lightboxHandlers();
             },
         });
     }
