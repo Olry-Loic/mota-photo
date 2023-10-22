@@ -235,6 +235,7 @@ ul#menu-pied-de-page {
   border-top: 1px solid #000000;
 }
 
+
 .menu-pied-de-page-container {
   display: flex;
   width: 100%;
@@ -389,7 +390,7 @@ article.post {
   width: 50%;
   justify-content: flex-end;
   position: relative;
-    z-index: 1;
+    z-index: -1;
 }
 
 .open-lightbox-single {
@@ -426,6 +427,12 @@ article.post {
   font-size: 14px;
   line-height: 20.73px;
 }
+
+@media (max-width: 750px) {
+  .post-info h1 {
+    font-size: 40px;
+  }
+}  
 /*__________________________________________________________*affichage post commande*_________________________________________*/
 .post-commande {
   display: flex;
@@ -665,6 +672,7 @@ article.post {
   .post-apparente-image .photo img {
     min-width: 317.66px;
     min-height: 278.8px;
+    z-index: 0;
   }
 
   .post-apparente h2 {
@@ -802,17 +810,18 @@ select {
 .main-filter-catfor {
   gap: 36px;
   display: flex;
-  height: 43px;
+
 }
 
 .main-filter-trier {
   display: flex;
-  height: 43px;
+
 }
 
 .select2{
   appearance: none;
 }
+
 
 span.select2-selection.select2-selection--single {
   height: 43px;
@@ -910,20 +919,19 @@ ul#select2-trier-results {
   border-color: blue;
 }
 
-span.select2-dropdown.select2-dropdown--below {
-  margin-top: 0px;
-  position: absolute;
-
-}
-
 .select2-container--open .select2-dropdown--above {
-  margin-top: 0px;
   position: absolute;
   border-bottom: none;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
   border-radius: 8px 8px 0px 0px;
+  margin-top: 0px!important;
 }
+span.select2-dropdown.select2-dropdown--below {
+  margin-top: -40px!important;
+  position: absolute;
+}
+
 
 @media (max-width:950px) {
   .main-filter {
@@ -956,7 +964,7 @@ span.select2-dropdown.select2-dropdown--below {
   width: 40vw;
   height: 40vw;
   background-color: rgba(0, 0, 0, 0.8);
-  z-index: 0;
+  z-index: -1;
   display: flex;
   flex-direction: column;
 }
